@@ -1,0 +1,15 @@
+{% extends "admin/index.html" %}
+{% load guide_tags %}
+
+{% block content %}
+{% dashboard_counts as counts %}
+<div class="module" style="margin-bottom: 20px;">
+  <table>
+    <caption>Přehled</caption>
+    <tr><th scope="row">Sekce</th><td>{{ counts.sections }}</td></tr>
+    <tr><th scope="row">Témata</th><td>{{ counts.topics }}</td></tr>
+    <tr><th scope="row">Lokality</th><td>{{ counts.locations }}</td></tr>
+  </table>
+</div>
+{{ block.super }}
+{% endblock %}
